@@ -1,0 +1,762 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap);
+body {
+    font-family: Quicksand, sans-serif;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: inline
+}
+
+
+/* Ini bagian Navbar */
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 25px;
+    padding-left: 25px;
+    float: left;
+}
+
+nav {
+    background-color: #00c8eb;
+    padding: 5px;
+    height: 80px;
+    position: sticky;
+    padding-left: 30px;
+    top: 0;
+}
+
+nav img {
+    width: 150px;
+    float: right;
+    padding: 20px;
+    margin-top: -35px;
+    margin-right: 25px;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    font-weight: 700;
+    color: #3245b4
+}
+
+
+/* akhir navbar */
+
+
+/* ini bagian jumbotron */
+
+.jumbotron {
+    font-size: 20px;
+    padding: 60px;
+    background-color: #00c8eb;
+    text-align: center;
+    color: #fff;
+    display: flex;
+}
+
+.jumbotron img {
+    margin-top: 20px;
+    width: 40%;
+    flex-grow: 1;
+}
+
+#welcoming {
+    text-align: left;
+    margin: 75px;
+    padding-top: 70px;
+    flex-grow: 1;
+    margin-top: -10px;
+}
+
+#joinButton {
+    margin-left: 40px;
+    padding: 18px 40px;
+    border-radius: 10px;
+    background: #C592FF;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px #666666;
+    color: #fff;
+    font-family: Quicksand;
+}
+
+button:hover {
+    opacity: 70%;
+}
+
+
+/* akhir jumbotron */
+
+
+/* ini bagian content about */
+
+#about {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-left-col {
+    flex-basis: 50%;
+}
+
+.about-left-col img {
+    width: 100%;
+}
+
+.about-right-col {
+    flex-basis: 50%;
+    text-align: right;
+}
+
+.about-text {
+    max-width: 500px;
+    margin-right: 100px;
+    display: inline-block;
+}
+
+.about-text h1,
+p {
+    font-family: Quicksand;
+    font-size: 20px;
+}
+
+
+/* akhir content about */
+
+
+/* ini adalah content service */
+
+#service {
+    padding: 70px;
+    align-items: center;
+    background-color: #2cc8e4;
+    height: 160vh;
+    margin-top: 20px;
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+}
+
+.service-text {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 25px;
+    font-size: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.box img {
+    width: 300px;
+    padding: 10px;
+}
+
+.box h1 {
+    color: #000;
+    font-size: 19px;
+}
+
+.container .card {
+    background: #E7E462;
+}
+
+.box p {
+    font-size: 14px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px
+}
+
+
+/* akhir conten service */
+
+
+/* ini adalah contact website */
+
+#contact {
+    margin-top: -30px;
+    z-index: 2;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 40px 40px 0px 0px;
+    background: #fff;
+    box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+}
+
+.contact-right-col {
+    flex-basis: 50%;
+}
+
+.contact-right-col img {
+    width: 100%;
+}
+
+.contact-left-col {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.contact-text {
+    max-width: 500px;
+    margin-left: 100px;
+    display: inline-block;
+}
+
+.contact-text h1,
+p {
+    font-family: Quicksand;
+    font-size: 20px;
+}
+
+
+/* akhir contact website */
+
+
+/* ini adalah owner website */
+
+aside {
+    width: 60%;
+    margin: auto;
+    padding: 40px;
+}
+
+.profile header {
+    text-align: center
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+/* akhir owner website */
+
+h2 {
+    color: #00a2c6
+}
+
+h3 {
+    color: #00a2c6
+}
+
+footer {
+    padding: 20px;
+    color: #fff;
+    background-color: #00c8eb;
+    text-align: center;
+    font-weight: 700
+}
+
+main {
+    overflow: auto
+}
+
+* {
+    box-sizing: border-box
+}
+
+@media screen and (min-width: 770px) {
+    aside {
+        width: 100%;
+        padding: 0
+    }
+    nav li {
+        display: inline;
+        list-style-type: none;
+        padding-left: 5px;
+        float: left;
+    }
+    nav {
+        background-color: #00c8eb;
+        padding: 5px;
+        height: 80px;
+        position: sticky;
+        top: 0;
+    }
+    .jumbotron {
+        font-size: 15px;
+        background-color: #00c8eb;
+        color: #fff;
+        height: 90vh;
+        width: 100%;
+    }
+    #welcoming {
+        text-align: left;
+        padding-top: 50px;
+        flex-grow: 1;
+        margin-top: -px;
+    }
+    #joinButton {
+        margin-top: 20px;
+        margin-left: 60px;
+        border-radius: 10px;
+        background: #C592FF;
+        font-weight: bold;
+        box-shadow: 0px 2px 4px #666666;
+        color: #fff;
+        font-family: Quicksand;
+    }
+    button:hover {
+        opacity: 70%;
+    }
+    .jumbotron img {
+        object-fit: contain;
+    }
+    .about-right-col {
+        padding: 30px;
+    }
+    .about-text {
+        width: 100%;
+        height: 40%;
+    }
+    .about-text h1 {
+        font-family: Quicksand;
+        font-size: 20px;
+        text-align: center;
+    }
+    #service {
+        height: 100%;
+    }
+    .container {
+        margin: auto;
+        height: 100%;
+    }
+    .box {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .box img {
+        width: 300px;
+        padding: 10px;
+    }
+    .box h1 {
+        color: #000;
+        font-size: 19px;
+    }
+    .container .card {
+        background: #E7E462;
+    }
+    .box p {
+        font-size: 14px;
+    }
+    .card {
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px
+    }
+    body {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:770px) {
+    aside {
+        width: 100%;
+        padding: 0
+    }
+    /* Ini bagian Navbar */
+    nav li {
+        display: inline;
+        list-style-type: none;
+        padding-left: 5px;
+        float: left;
+    }
+    nav {
+        background-color: #00c8eb;
+        padding: 5px;
+        height: 80px;
+        position: sticky;
+        padding-left: 20px;
+        top: 0;
+    }
+    nav img {
+        display: none;
+    }
+    nav a {
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        padding-top: 10px;
+    }
+    nav a:hover {
+        font-weight: 700;
+        color: #3245b4
+    }
+    /* Akhir navbarslide */
+    /* ini bagian jumbotron */
+    .jumbotron {
+        margin: auto;
+        font-size: 20px;
+        background-color: #00c8eb;
+        color: #fff;
+        height: 90vh;
+    }
+    .jumbotron img {
+        display: none;
+    }
+    #welcoming {
+        text-align: left;
+        padding-top: 50px;
+        flex-grow: 1;
+        margin-top: -px;
+    }
+    #joinButton {
+        margin-top: 20px;
+        margin-left: 60px;
+        border-radius: 10px;
+        background: #C592FF;
+        font-weight: bold;
+        box-shadow: 0px 2px 4px #666666;
+        color: #fff;
+        font-family: Quicksand;
+    }
+    button:hover {
+        opacity: 70%;
+    }
+    /* akhir jumbotron */
+    /* ini bagian content about */
+    #about {
+        width: 100%;
+    }
+    .about-left-col img {
+        display: none;
+    }
+    .about-right-col {
+        text-align: center;
+        margin-left: 150px;
+    }
+    .about-text {
+        width: 100%;
+        height: 40%;
+    }
+    .about-text h1,
+    p {
+        font-family: Quicksand;
+        font-size: 20px;
+    }
+    /* akhir content about */
+    /* ini adalah content service */
+    #service {
+        padding: 30px;
+        align-items: center;
+        background-color: #2cc8e4;
+        height: 100%;
+        margin-top: 20px;
+        border-radius: 40px 40px 0px 0px;
+        box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+    }
+    .service-text {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        margin: auto;
+        padding: 25px;
+        font-size: 20px;
+    }
+    .container {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 100%;
+        margin-bottom: 80px;
+    }
+    .box {
+        flex-basis: 25%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .box img {
+        width: 300px;
+        padding: 10px;
+    }
+    .box h1 {
+        color: #000;
+        font-size: 19px;
+    }
+    .container .card {
+        background: #E7E462;
+    }
+    .box p {
+        font-size: 14px;
+    }
+    .card {
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px
+    }
+    /* akhir conten service */
+    /* ini adalah contact website */
+    #contact {
+        margin-top: -30px;
+        z-index: 2;
+        padding: 100px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 40px 40px 0px 0px;
+        background: #fff;
+        box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+    }
+    .contact-right-col img {
+        display: none;
+    }
+    .contact-left-col {
+        text-align: center;
+        margin-left: 50px;
+    }
+    .contact-text {
+        width: 100%;
+        margin-left: 100px;
+        display: inline-block;
+    }
+    .contact-text a {
+        margin-left: -40px;
+    }
+    .contact-text h1,
+    p {
+        font-family: Quicksand;
+        font-size: 20px;
+    }
+    /* akhir contact website */
+    /* ini adalah owner website */
+    aside {
+        width: 90%;
+        margin: auto;
+        padding: 40px;
+    }
+    .profile header {
+        text-align: center
+    }
+    .profile img {
+        width: 200px;
+        border-radius: 50%;
+    }
+    /* akhir owner website */
+}
+
+@media screen and (max-width:393px) {
+    aside {
+        width: 100%;
+        padding: 0
+    }
+    /* Ini bagian Navbar */
+    nav li {
+        display: inline;
+        list-style-type: none;
+        padding-left: 5px;
+        float: left;
+    }
+    nav {
+        background-color: #00c8eb;
+        padding: 5px;
+        height: 80px;
+        position: sticky;
+        padding-left: 20px;
+        top: 0;
+    }
+    nav img {
+        display: none;
+    }
+    nav a {
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        padding-top: 10px;
+    }
+    nav a:hover {
+        font-weight: 700;
+        color: #3245b4
+    }
+    /* Akhir navbarslide */
+    /* ini bagian jumbotron */
+    .jumbotron {
+        font-size: 15px;
+        background-color: #00c8eb;
+        color: #fff;
+        height: 90vh;
+    }
+    .jumbotron img {
+        display: none;
+    }
+    #welcoming {
+        text-align: left;
+        padding-top: 50px;
+        flex-grow: 1;
+        margin: auto;
+    }
+    #joinButton {
+        margin-top: 20px;
+        margin-left: 60px;
+        border-radius: 10px;
+        background: #C592FF;
+        font-weight: bold;
+        box-shadow: 0px 2px 4px #666666;
+        color: #fff;
+        font-family: Quicksand;
+    }
+    button:hover {
+        opacity: 70%;
+    }
+    /* akhir jumbotron */
+    /* ini bagian content about */
+    #about {
+        width: 100%;
+        margin: auto;
+    }
+    .about-left-col img {
+        display: none;
+    }
+    .about-right-col {
+        text-align: center;
+        margin-left: 90px;
+    }
+    .about-text {
+        width: 100%;
+        height: 40%;
+    }
+    .about-text h1,
+    p {
+        font-family: Quicksand;
+        font-size: 20px;
+    }
+    /* akhir content about */
+    /* ini adalah content service */
+    #service {
+        padding: 30px;
+        align-items: center;
+        background-color: #2cc8e4;
+        height: 100%;
+        margin-top: 20px;
+        border-radius: 40px 40px 0px 0px;
+        box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+    }
+    .service-text {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        margin: auto;
+        padding: 25px;
+        font-size: 20px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .box {
+        flex-basis: 25%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .box img {
+        object-fit: contain;
+    }
+    .box h1 {
+        color: #000;
+        font-size: 19px;
+    }
+    .container .card {
+        background: #E7E462;
+    }
+    .box p {
+        font-size: 14px;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px
+    }
+    /* akhir conten service */
+    /* ini adalah contact website */
+    #contact {
+        margin-top: -30px;
+        z-index: 2;
+        padding: 100px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 40px 40px 0px 0px;
+        background: #fff;
+        box-shadow: -1px -4px 4px 0px rgba(0, 0, 0, .2);
+    }
+    .contact-right-col img {
+        display: none;
+    }
+    .contact-left-col {
+        text-align: center;
+        margin-left: 50px;
+    }
+    .contact-text {
+        max-width: 500px;
+        margin-left: 100px;
+        display: inline-block;
+    }
+    .contact-text a {
+        margin-left: -40px;
+    }
+    .contact-text h1,
+    p {
+        font-family: Quicksand;
+        font-size: 20px;
+    }
+    /* akhir contact website */
+    /* ini adalah owner website */
+    aside {
+        width: 90%;
+        margin: auto;
+        padding: 40px;
+    }
+    .profile header {
+        text-align: center
+    }
+    .profile img {
+        width: 200px;
+        border-radius: 50%;
+    }
+    /* akhir owner website */
+}

@@ -1,0 +1,690 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2022 at 06:35 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sppsekolah`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `idadmin` int(5) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `namalengkap` varchar(40) DEFAULT NULL,
+  `level` enum('admin','user') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idadmin`, `username`, `password`, `namalengkap`, `level`) VALUES
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Ricky Alfina Ardananta', 'admin'),
+(11, 'user', '12dea96fec20593566ab75692c9949596833adc9', 'Minatozaki Sana', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guru`
+--
+
+CREATE TABLE `guru` (
+  `idguru` int(5) NOT NULL,
+  `namaguru` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`idguru`, `namaguru`) VALUES
+(1, 'Lilik Haryanti, S.Kom'),
+(2, 'Zaenal Arifin S.Kom'),
+(3, 'Asep Ajiyati S.Kom'),
+(4, 'Ria Iswandra S.Kom'),
+(5, 'Shokib S.Kom'),
+(6, 'Nawan S.Kom'),
+(7, 'Antik Haryadi S.Kom'),
+(8, 'Cahyo S.Pd'),
+(9, 'Suwardi S.Pd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `idsiswa` int(10) NOT NULL,
+  `nis` varchar(10) DEFAULT NULL,
+  `namasiswa` varchar(40) DEFAULT NULL,
+  `kelas` varchar(10) DEFAULT NULL,
+  `tahunajaran` year(4) DEFAULT NULL,
+  `biaya` int(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`idsiswa`, `nis`, `namasiswa`, `kelas`, `tahunajaran`, `biaya`) VALUES
+(1, '20220001', 'Adiyatul Fahri', 'X RPL 1', 2022, 250000),
+(2, '20220002', 'Agil Ramadhani', 'X RPL 1', 2022, 250000),
+(3, '20220003', 'Alda Erna Fidiana', 'X RPL 1', 2022, 250000),
+(4, '20220004', 'Alivia Maulida Pratiwi', 'X RPL 1', 2022, 250000),
+(5, '20220005', 'Andhira Putri Prihatini', 'X RPL 2', 2022, 250000),
+(6, '20220006', 'Anis Alikhah', 'X RPL 2', 2022, 250000),
+(7, '20220007', 'Arda Fiky Aditya', 'X RPL 2', 2022, 250000),
+(8, '20220008', 'Boas Bashamayim', 'X RPL 2', 2022, 250000),
+(9, '20220009', 'Dewi Riska Oktavia', 'X RPL 3', 2022, 250000),
+(10, '20220010', 'Dimas Setyo Wijanarko', 'X RPL 3', 2022, 250000),
+(11, '20220011', 'Doni Surya Wijaya', 'X RPL 3', 2022, 250000),
+(12, '20220012', 'Elvira Eka Saputri', 'X RPL 3', 2022, 250000),
+(13, '20210001', 'Fadhila Rahadatul Aisy', 'XI RPL 1', 2021, 250000),
+(14, '20210002', 'Fatkhul Azzani', 'XI RPL 1', 2021, 250000),
+(15, '20210003', 'Feni Cita Anggraeni', 'XI RPL 1', 2021, 250000),
+(16, '20210004', 'Hadi Surahman', 'XI RPL 1', 2021, 250000),
+(17, '20210005', 'Herjuna Bintang Rizky Afiono', 'XI RPL 2', 2021, 250000),
+(18, '20210006', 'Himawan Nur Indra', 'XI RPL 2', 2021, 250000),
+(19, '20210007', 'Indah Widiyas Sari', 'XI RPL 2', 2021, 250000),
+(20, '20210008', 'Jati Setiya Ningrum', 'XI RPL 2', 2021, 250000),
+(21, '20210009', 'Maharani Dewi Syawalani', 'XI RPL 3', 2021, 250000),
+(22, '20210010', 'Maulana Alam Syah Saat', 'XI RPL 3', 2021, 250000),
+(23, '20210011', 'Muhammad Eryan Pratama', 'XI RPL 3', 2021, 250000),
+(24, '20210012', 'Muhammad Habibul Umam', 'XI RPL 3', 2021, 250000),
+(25, '20200001', 'Nastain', 'XII RPL 1', 2020, 250000),
+(26, '20200002', 'Putri Dwi Sesanty S', 'XII RPL 1', 2020, 250000),
+(27, '20200003', 'Rama Andyca Saputra', 'XII RPL 1', 2020, 250000),
+(28, '20200004', 'Rekcindra Afrismazakky', 'XII RPL 1', 2020, 250000),
+(29, '20200005', 'Ricky Alfina Ardananta', 'XII RPL 2', 2020, 250000),
+(30, '20200006', 'Riqi Rusadi', 'XII RPL 2', 2020, 250000),
+(31, '20200007', 'Tyas Santi Kusumawati', 'XII RPL 2', 2020, 250000),
+(32, '20200008', 'Wahyu Ryan Fajar Saputra', 'XII RPL 2', 2020, 250000),
+(33, '20200009', 'Wildan Aldy Pamungkas', 'XII RPL 3', 2020, 250000),
+(34, '20200010', 'Widya Dwi Hapsari', 'XII RPL 3', 2020, 250000),
+(35, '20200011', 'Wilujeng Ningtyas', 'XII RPL 3', 2020, 250000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `spp`
+--
+
+CREATE TABLE `spp` (
+  `idspp` int(5) NOT NULL,
+  `idsiswa` int(10) DEFAULT NULL,
+  `jatuhtempo` date DEFAULT NULL,
+  `bulan` varchar(20) DEFAULT NULL,
+  `nobayar` varchar(10) DEFAULT NULL,
+  `tglbayar` date DEFAULT NULL,
+  `jumlah` int(20) DEFAULT NULL,
+  `ket` varchar(20) DEFAULT NULL,
+  `idadmin` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `spp`
+--
+
+INSERT INTO `spp` (`idspp`, `idsiswa`, `jatuhtempo`, `bulan`, `nobayar`, `tglbayar`, `jumlah`, `ket`, `idadmin`) VALUES
+(433, 1, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(434, 1, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(435, 1, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(436, 1, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(437, 1, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(438, 1, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(439, 1, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(440, 1, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(441, 1, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(442, 1, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(443, 1, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(444, 1, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(445, 2, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(446, 2, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(447, 2, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(448, 2, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(449, 2, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(450, 2, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(451, 2, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(452, 2, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(453, 2, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(454, 2, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(455, 2, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(456, 2, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(457, 3, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(458, 3, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(459, 3, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(460, 3, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(461, 3, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(462, 3, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(463, 3, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(464, 3, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(465, 3, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(466, 3, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(467, 3, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(468, 3, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(469, 4, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(470, 4, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(471, 4, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(472, 4, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(473, 4, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(474, 4, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(475, 4, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(476, 4, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(477, 4, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(478, 4, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(479, 4, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(480, 4, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(481, 5, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(482, 5, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(483, 5, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(484, 5, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(485, 5, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(486, 5, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(487, 5, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(488, 5, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(489, 5, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(490, 5, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(491, 5, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(492, 5, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(493, 6, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(494, 6, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(495, 6, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(496, 6, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(497, 6, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(498, 6, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(499, 6, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(500, 6, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(501, 6, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(502, 6, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(503, 6, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(504, 6, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(505, 7, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(506, 7, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(507, 7, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(508, 7, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(509, 7, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(510, 7, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(511, 7, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(512, 7, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(513, 7, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(514, 7, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(515, 7, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(516, 7, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(517, 8, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(518, 8, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(519, 8, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(520, 8, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(521, 8, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(522, 8, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(523, 8, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(524, 8, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(525, 8, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(526, 8, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(527, 8, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(528, 8, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(529, 9, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(530, 9, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(531, 9, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(532, 9, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(533, 9, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(534, 9, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(535, 9, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(536, 9, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(537, 9, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(538, 9, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(539, 9, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(540, 9, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(541, 10, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(542, 10, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(543, 10, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(544, 10, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(545, 10, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(546, 10, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(547, 10, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(548, 10, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(549, 10, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(550, 10, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(551, 10, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(552, 10, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(553, 11, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(554, 11, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(555, 11, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(556, 11, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(557, 11, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(558, 11, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(559, 11, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(560, 11, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(561, 11, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(562, 11, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(563, 11, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(564, 11, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(565, 12, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(566, 12, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(567, 12, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(568, 12, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(569, 12, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(570, 12, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(571, 12, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(572, 12, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(573, 12, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(574, 12, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(575, 12, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(576, 12, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(577, 13, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(578, 13, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(579, 13, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(580, 13, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(581, 13, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(582, 13, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(583, 13, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(584, 13, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(585, 13, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(586, 13, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(587, 13, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(588, 13, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(589, 14, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(590, 14, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(591, 14, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(592, 14, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(593, 14, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(594, 14, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(595, 14, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(596, 14, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(597, 14, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(598, 14, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(599, 14, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(600, 14, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(601, 15, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(602, 15, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(603, 15, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(604, 15, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(605, 15, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(606, 15, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(607, 15, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(608, 15, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(609, 15, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(610, 15, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(611, 15, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(612, 15, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(613, 16, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(614, 16, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(615, 16, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(616, 16, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(617, 16, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(618, 16, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(619, 16, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(620, 16, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(621, 16, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(622, 16, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(623, 16, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(624, 16, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(625, 17, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(626, 17, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(627, 17, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(628, 17, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(629, 17, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(630, 17, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(631, 17, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(632, 17, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(633, 17, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(634, 17, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(635, 17, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(636, 17, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(637, 18, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(638, 18, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(639, 18, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(640, 18, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(641, 18, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(642, 18, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(643, 18, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(644, 18, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(645, 18, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(646, 18, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(647, 18, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(648, 18, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(649, 19, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(650, 19, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(651, 19, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(652, 19, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(653, 19, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(654, 19, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(655, 19, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(656, 19, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(657, 19, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(658, 19, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(659, 19, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(660, 19, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(661, 20, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(662, 20, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(663, 20, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(664, 20, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(665, 20, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(666, 20, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(667, 20, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(668, 20, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(669, 20, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(670, 20, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(671, 20, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(672, 20, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(673, 21, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(674, 21, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(675, 21, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(676, 21, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(677, 21, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(678, 21, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(679, 21, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(680, 21, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(681, 21, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(682, 21, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(683, 21, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(684, 21, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(685, 22, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(686, 22, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(687, 22, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(688, 22, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(689, 22, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(690, 22, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(691, 22, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(692, 22, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(693, 22, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(694, 22, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(695, 22, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(696, 22, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(697, 23, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(698, 23, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(699, 23, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(700, 23, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(701, 23, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(702, 23, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(703, 23, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(704, 23, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(705, 23, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(706, 23, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(707, 23, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(708, 23, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(709, 24, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(710, 24, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(711, 24, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(712, 24, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(713, 24, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(714, 24, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(715, 24, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(716, 24, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(717, 24, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(718, 24, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(719, 24, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(720, 24, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(721, 25, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(722, 25, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(723, 25, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(724, 25, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(725, 25, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(726, 25, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(727, 25, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(728, 25, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(729, 25, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(730, 25, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(731, 25, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(732, 25, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(733, 26, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(734, 26, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(735, 26, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(736, 26, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(737, 26, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(738, 26, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(739, 26, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(740, 26, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(741, 26, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(742, 26, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(743, 26, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(744, 26, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(745, 27, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(746, 27, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(747, 27, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(748, 27, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(749, 27, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(750, 27, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(751, 27, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(752, 27, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(753, 27, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(754, 27, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(755, 27, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(756, 27, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(757, 28, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(758, 28, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(759, 28, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(760, 28, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(761, 28, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(762, 28, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(763, 28, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(764, 28, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(765, 28, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(766, 28, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(767, 28, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(768, 28, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(769, 29, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(770, 29, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(771, 29, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(772, 29, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(773, 29, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(774, 29, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(775, 29, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(776, 29, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(777, 29, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(778, 29, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(779, 29, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(780, 29, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(781, 30, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(782, 30, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(783, 30, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(784, 30, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(785, 30, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(786, 30, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(787, 30, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(788, 30, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(789, 30, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(790, 30, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(791, 30, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(792, 30, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(793, 31, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(794, 31, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(795, 31, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(796, 31, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(797, 31, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(798, 31, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(799, 31, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(800, 31, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(801, 31, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(802, 31, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(803, 31, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(804, 31, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(805, 32, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(806, 32, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(807, 32, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(808, 32, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(809, 32, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(810, 32, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(811, 32, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(812, 32, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(813, 32, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(814, 32, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(815, 32, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(816, 32, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(817, 33, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(818, 33, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(819, 33, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(820, 33, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(821, 33, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(822, 33, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(823, 33, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(824, 33, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(825, 33, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(826, 33, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(827, 33, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(828, 33, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(829, 34, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(830, 34, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(831, 34, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(832, 34, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(833, 34, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(834, 34, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(835, 34, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(836, 34, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(837, 34, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(838, 34, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(839, 34, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(840, 34, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL),
+(841, 35, '2022-09-01', 'September  2022', NULL, NULL, 250000, NULL, NULL),
+(842, 35, '2022-10-01', 'Oktober  2022', NULL, NULL, 250000, NULL, NULL),
+(843, 35, '2022-11-01', 'November  2022', NULL, NULL, 250000, NULL, NULL),
+(844, 35, '2022-12-01', 'Desember  2022', NULL, NULL, 250000, NULL, NULL),
+(845, 35, '2023-01-01', 'januari  2023', NULL, NULL, 250000, NULL, NULL),
+(846, 35, '2023-02-01', 'Februari  2023', NULL, NULL, 250000, NULL, NULL),
+(847, 35, '2023-03-01', 'Maret  2023', NULL, NULL, 250000, NULL, NULL),
+(848, 35, '2023-04-01', 'April  2023', NULL, NULL, 250000, NULL, NULL),
+(849, 35, '2023-05-01', 'Mei  2023', NULL, NULL, 250000, NULL, NULL),
+(850, 35, '2023-06-01', 'Juni  2023', NULL, NULL, 250000, NULL, NULL),
+(851, 35, '2023-07-01', 'Juli  2023', NULL, NULL, 250000, NULL, NULL),
+(852, 35, '2023-08-01', 'Agustus  2023', NULL, NULL, 250000, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `walikelas`
+--
+
+CREATE TABLE `walikelas` (
+  `kelas` varchar(10) NOT NULL,
+  `idguru` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `walikelas`
+--
+
+INSERT INTO `walikelas` (`kelas`, `idguru`) VALUES
+('X RPL 1', 1),
+('X RPL 2', 1),
+('X RPL 3', 1),
+('XI RPL 1', 2),
+('XI RPL 2', 3),
+('XI RPL 3', 4),
+('XII RPL 1', 5),
+('XII RPL 2', 7),
+('XII RPL 3', 9);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`idadmin`);
+
+--
+-- Indexes for table `guru`
+--
+ALTER TABLE `guru`
+  ADD PRIMARY KEY (`idguru`);
+
+--
+-- Indexes for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD PRIMARY KEY (`idsiswa`),
+  ADD KEY `fk_kelas` (`kelas`);
+
+--
+-- Indexes for table `spp`
+--
+ALTER TABLE `spp`
+  ADD PRIMARY KEY (`idspp`),
+  ADD KEY `fk_admin` (`idadmin`),
+  ADD KEY `fk_siswa` (`idsiswa`);
+
+--
+-- Indexes for table `walikelas`
+--
+ALTER TABLE `walikelas`
+  ADD PRIMARY KEY (`kelas`),
+  ADD KEY `fk_guru` (`idguru`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `idadmin` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `guru`
+--
+ALTER TABLE `guru`
+  MODIFY `idguru` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `siswa`
+--
+ALTER TABLE `siswa`
+  MODIFY `idsiswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+
+--
+-- AUTO_INCREMENT for table `spp`
+--
+ALTER TABLE `spp`
+  MODIFY `idspp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=853;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD CONSTRAINT `fk_kelas` FOREIGN KEY (`kelas`) REFERENCES `walikelas` (`kelas`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `spp`
+--
+ALTER TABLE `spp`
+  ADD CONSTRAINT `fk_admin` FOREIGN KEY (`idadmin`) REFERENCES `admin` (`idadmin`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_siswa` FOREIGN KEY (`idsiswa`) REFERENCES `siswa` (`idsiswa`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `walikelas`
+--
+ALTER TABLE `walikelas`
+  ADD CONSTRAINT `fk_guru` FOREIGN KEY (`idguru`) REFERENCES `guru` (`idguru`) ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
